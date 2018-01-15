@@ -1,3 +1,6 @@
+#NOTE: to run this program, first cd into the folder where the program is contained
+# Type chmod -x WinTheLottery.py in terminal
+# Finally, type python WinTheLottery.py to run the script
 import random
 
 def win_lottery_fixed(placed_bet):
@@ -38,7 +41,7 @@ def win_lottery_rand():
 number_of_tries = 90000
 # Bet placed by the person
 placed_bet = [3, 25, 28, 37, 71]
-# Number of times a person wins the lottery
+# Number of times a person gets the right number. Each position stands for first, second, third, fourth, and fifth numbers
 winnings_fixed = [0, 0, 0, 0, 0]
 winnings_random = [0, 0, 0, 0, 0]
 
@@ -50,7 +53,7 @@ for i in range(number_of_tries):
         winnings_random[j] += res_2[j]
 
 print "-- FIXED NUMBERS --"
-print "With ", number_of_tries, " tries, the chances of hitting:"
+print "With ", number_of_tries, " tries, the chances are:"
 print "1 number: ", float(winnings_fixed[0])/number_of_tries
 print "2 numbers: ", float(winnings_fixed[1])/number_of_tries
 print "3 numbers: ", float(winnings_fixed[2])/number_of_tries
