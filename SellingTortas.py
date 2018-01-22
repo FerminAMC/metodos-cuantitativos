@@ -30,4 +30,4 @@ cumulative_probability = [0.05, 0.15, 0.35, 0.75, 0.95, 1]
 
 for i in range(number_of_days):
     buy_tortas(cumulative_probability, gains_per_amount)
-print gains_per_amount
+print (gains_per_amount)
