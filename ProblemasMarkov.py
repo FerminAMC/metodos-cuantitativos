@@ -1,16 +1,20 @@
+#https://www.youtube.com/watch?v=qhnFHnLkrfA
 import numpy as np
 from numpy.linalg import inv
 
-#quedan, pasan, desertan, mueren
-n1 = [.1, .79, .1, .01]
-n2 = [.1, .83, .05, .02]
-n3 = [.15, .77, .05, .03]
-n4 = [.1, .81, .05, .04]
-
-I = np.array([[.1, .79], [.1, .83]])
-O = np.array([[.1, .01], [.05, .02]])
-A = np.array([[.15, .77], [.1, .81]])
-B = np.array([[.05, .03], [.05, .04]])
-F = inv(np.subtract(I, B))
-FA = np.matmul(F, A)
-print(FA)
+#Ejercicio 1
+P = np.array([[1, 0, 0, 0, 0, 0],
+                [0, 1, 0, 0, 0, 0],
+                [0, .1, .1, .8, 0, 0],
+                [0, .05, 0, .1, .85, 0],
+                [0, .05, 0, 0, .15, .8],
+                [.85, .05, 0, 0, 0, .1]])
+I = np.array([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]) # Identity matrix
+O = np.array([[0, 0, 0, 0], [0, 0, 0, 0]]) # Ceros matrix
+R = np.array([[0, .1], [0, .05], [0, .05], [.85, .05]])
+Q = np.array([[.1, .8, 0, 0], [0, .1, .85, 0], [0, 0, .15, .8], [0, 0, 0, .1]])
+F = inv(np.subtract(I, Q))
+FR = np.matmul(F, R)
+#print(P)
+print("Probabilidad de que se gradue: {}".format(FR[0][0]))
+print("Probabilidad de que deserte: {}".format(FR[0][1]))
